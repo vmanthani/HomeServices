@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <!-- Illustrated scene: our team. Replace with a real team photo any time. -->
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="480" rx="28" fill="url(#panel)"/>
+  <circle cx="670" cy="110" r="110" fill="#d9f2ec"/>
+  <circle cx="90" cy="420" r="70" fill="#fdeccc"/>
+  <g fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="3 10">
+    <circle cx="400" cy="250" r="180"/>
+  </g>
+
+  <!-- shield emblem above the team -->
+  <g transform="translate(360 44)">
+    <path d="M40 0l40 15v32c0 30 -40 50 -40 50s-40 -20 -40 -50V15z" fill="#0f766e"/>
+    <path d="M40 8l32 12v27c0 24 -32 40 -32 40s-32 -16 -32 -40V20z" fill="#14b8a6"/>
+    <path d="M24 48l12 12 22 -24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <ellipse cx="400" cy="442" rx="290" ry="18" fill="rgba(15,23,42,.08)"/>
+
+  <!-- left teammate (clipboard) -->
+  <g transform="translate(190 0)">
+    <rect x="14" y="350" width="24" height="76" rx="12" fill="#243b55"/>
+    <rect x="48" y="350" width="24" height="76" rx="12" fill="#243b55"/>
+    <rect x="6" y="418" width="40" height="16" rx="8" fill="#1e293b"/>
+    <rect x="44" y="418" width="40" height="16" rx="8" fill="#1e293b"/>
+    <rect x="0" y="244" width="86" height="120" rx="26" fill="#2f4d6e"/>
+    <rect x="0" y="322" width="86" height="12" rx="6" fill="#1e293b"/>
+    <path d="M8 268l-16 46" stroke="#2f4d6e" stroke-width="19" stroke-linecap="round"/>
+    <path d="M78 268l22 40" stroke="#2f4d6e" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="104" cy="316" r="11" fill="#14b8a6"/>
+    <rect x="84" y="300" width="52" height="66" rx="8" fill="#f6c66b"/>
+    <rect x="92" y="312" width="36" height="6" rx="3" fill="#b45309"/>
+    <rect x="92" y="326" width="36" height="6" rx="3" fill="#b45309"/>
+    <rect x="92" y="340" width="24" height="6" rx="3" fill="#b45309"/>
+    <circle cx="43" cy="204" r="32" fill="#f2c094"/>
+    <path d="M11 198a32 32 0 0 1 64 0z" fill="#3f3f46"/>
+    <path d="M74 200c8 22 4 40 -4 48" fill="none" stroke="#3f3f46" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="36" cy="212" r="3.4" fill="#1e293b"/>
+    <circle cx="52" cy="212" r="3.4" fill="#1e293b"/>
+    <path d="M38 226c5 4 10 4 14 0" fill="none" stroke="#c98a5b" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- centre teammate (lead, arms crossed) -->
+  <g transform="translate(355 0)">
+    <rect x="16" y="342" width="26" height="84" rx="13" fill="#243b55"/>
+    <rect x="52" y="342" width="26" height="84" rx="13" fill="#243b55"/>
+    <rect x="8" y="418" width="42" height="17" rx="8" fill="#1e293b"/>
+    <rect x="48" y="418" width="42" height="17" rx="8" fill="#1e293b"/>
+    <rect x="0" y="228" width="94" height="128" rx="28" fill="#0f766e"/>
+    <rect x="0" y="312" width="94" height="13" rx="6" fill="#134e4a"/>
+    <path d="M10 258c20 26 54 26 74 0" fill="none" stroke="#134e4a" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="18" cy="270" r="11" fill="#f2c094"/>
+    <circle cx="76" cy="270" r="11" fill="#f2c094"/>
+    <path d="M35 250l12 4v10c0 9 -12 15 -12 15s-12 -6 -12 -15v-10z" fill="#f6c66b" transform="translate(12 6)"/>
+    <circle cx="47" cy="186" r="34" fill="#f2c094"/>
+    <path d="M13 180a34 34 0 0 1 68 0z" fill="#14b8a6"/>
+    <rect x="30" y="168" width="72" height="11" rx="5" fill="#14b8a6"/>
+    <circle cx="40" cy="194" r="3.6" fill="#1e293b"/>
+    <circle cx="56" cy="194" r="3.6" fill="#1e293b"/>
+    <path d="M42 210c5 4 11 4 15 0" fill="none" stroke="#c98a5b" stroke-width="3.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- right teammate (sprayer) -->
+  <g transform="translate(520 0)">
+    <rect x="14" y="350" width="24" height="76" rx="12" fill="#243b55"/>
+    <rect x="48" y="350" width="24" height="76" rx="12" fill="#243b55"/>
+    <rect x="6" y="418" width="40" height="16" rx="8" fill="#1e293b"/>
+    <rect x="44" y="418" width="40" height="16" rx="8" fill="#1e293b"/>
+    <rect x="0" y="244" width="86" height="120" rx="26" fill="#2f4d6e"/>
+    <rect x="0" y="322" width="86" height="12" rx="6" fill="#1e293b"/>
+    <rect x="88" y="250" width="40" height="104" rx="16" fill="#f59e0b"/>
+    <rect x="98" y="238" width="20" height="16" rx="7" fill="#d97706"/>
+    <path d="M78 268l24 44" stroke="#2f4d6e" stroke-width="19" stroke-linecap="round"/>
+    <path d="M8 268l-14 44" stroke="#2f4d6e" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="-8" cy="318" r="11" fill="#14b8a6"/>
+    <circle cx="104" cy="316" r="11" fill="#14b8a6"/>
+    <circle cx="43" cy="204" r="32" fill="#f2c094"/>
+    <path d="M11 198a32 32 0 0 1 64 0z" fill="#0f766e"/>
+    <rect x="27" y="188" width="66" height="10" rx="5" fill="#0f766e"/>
+    <circle cx="36" cy="212" r="3.4" fill="#1e293b"/>
+    <circle cx="52" cy="212" r="3.4" fill="#1e293b"/>
+    <path d="M38 226c5 4 10 4 14 0" fill="none" stroke="#c98a5b" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#f59e0b">
+    <path d="M160 160l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" opacity=".8"/>
+    <path d="M640 300l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" opacity=".7"/>
+  </g>
+</svg>

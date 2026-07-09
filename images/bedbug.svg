@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <!-- Illustrated scene: bed bug inspection. Replace with a photo any time. -->
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="480" rx="28" fill="url(#panel)"/>
+  <circle cx="680" cy="100" r="100" fill="#d9f2ec"/>
+  <circle cx="100" cy="430" r="70" fill="#fdeccc"/>
+
+  <!-- moon + stars -->
+  <path d="M150 92a44 44 0 1 0 44 62 52 52 0 0 1 -44 -62z" fill="#f6c66b"/>
+  <g fill="#94a3b8">
+    <circle cx="250" cy="80" r="5"/>
+    <circle cx="300" cy="120" r="4"/>
+    <circle cx="222" cy="140" r="3.4"/>
+  </g>
+
+  <!-- bed (side view) -->
+  <g>
+    <rect x="120" y="180" width="34" height="200" rx="14" fill="#2f4d6e"/>
+    <rect x="120" y="170" width="34" height="60" rx="14" fill="#243b55"/>
+    <rect x="146" y="252" width="470" height="66" rx="18" fill="#f6fafd" stroke="#dbe6ef" stroke-width="4"/>
+    <rect x="160" y="228" width="120" height="46" rx="20" fill="#e3edf5"/>
+    <path d="M300 318h316v-40c0 -18 -14 -26 -34 -26H332z" fill="#f59e0b"/>
+    <path d="M332 252c-22 0 -32 10 -32 26v40" fill="none" stroke="#d97706" stroke-width="6"/>
+    <rect x="146" y="318" width="470" height="26" rx="10" fill="#334155"/>
+    <rect x="160" y="344" width="20" height="46" rx="8" fill="#243b55"/>
+    <rect x="586" y="344" width="20" height="46" rx="8" fill="#243b55"/>
+  </g>
+  <ellipse cx="390" cy="416" rx="200" ry="14" fill="rgba(15,23,42,.07)"/>
+
+  <!-- magnifier with bug -->
+  <g>
+    <circle cx="520" cy="220" r="88" fill="rgba(255,255,255,.9)" stroke="#0f766e" stroke-width="10"/>
+    <path d="M584 282l58 58" stroke="#0f766e" stroke-width="18" stroke-linecap="round"/>
+    <g transform="translate(520 222)">
+      <ellipse cx="0" cy="6" rx="26" ry="34" fill="#9a3412"/>
+      <ellipse cx="0" cy="-8" rx="18" ry="14" fill="#7c2d12"/>
+      <circle cx="0" cy="-26" r="10" fill="#7c2d12"/>
+      <g fill="none" stroke="#7c2d12" stroke-width="5" stroke-linecap="round">
+        <path d="M-22 -12l-18 -10M-26 6h-18M-22 22l-18 12M22 -12l18 -10M26 6h18M22 22l18 12"/>
+        <path d="M-6 -34l-6 -12M6 -34l6 -12"/>
+      </g>
+      <path d="M-12 2h24M-10 14h20" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#f59e0b">
+    <path d="M680 320l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" opacity=".8"/>
+    <path d="M240 200l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" opacity=".6"/>
+  </g>
+</svg>

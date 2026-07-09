@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <!-- Illustrated hero: pest control technician in action.
+       Replace with a real team photo any time (see README). -->
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="560" rx="28" fill="url(#panel)"/>
+
+  <!-- background decor -->
+  <circle cx="640" cy="120" r="150" fill="#d9f2ec"/>
+  <circle cx="120" cy="470" r="90" fill="#fdeccc"/>
+  <g fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="3 10">
+    <circle cx="560" cy="330" r="150"/>
+  </g>
+  <!-- window suggesting a home -->
+  <g>
+    <rect x="70" y="80" width="170" height="200" rx="12" fill="#e3edf5"/>
+    <rect x="82" y="92" width="146" height="176" rx="8" fill="#f6fafd"/>
+    <path d="M155 92v176M82 180h146" stroke="#cfdeeb" stroke-width="6"/>
+    <path d="M96 250c20-30 45-30 55 0z" fill="#8fd0c2"/>
+    <rect x="88" y="256" width="72" height="14" rx="7" fill="#c9dcc9"/>
+  </g>
+
+  <!-- ground shadow -->
+  <ellipse cx="330" cy="486" rx="150" ry="18" fill="rgba(15,23,42,.08)"/>
+  <ellipse cx="612" cy="470" rx="70" ry="10" fill="rgba(15,23,42,.07)"/>
+
+  <!-- technician -->
+  <g>
+    <!-- backpack tank -->
+    <rect x="216" y="266" width="48" height="118" rx="18" fill="#f59e0b"/>
+    <rect x="228" y="252" width="24" height="20" rx="8" fill="#d97706"/>
+    <!-- hose from tank to wand -->
+    <path d="M240 384c8 44 96 30 170 -42" fill="none" stroke="#475569" stroke-width="7" stroke-linecap="round"/>
+    <!-- legs -->
+    <rect x="284" y="376" width="27" height="86" rx="13" fill="#243b55"/>
+    <rect x="322" y="376" width="27" height="86" rx="13" fill="#243b55"/>
+    <rect x="276" y="452" width="44" height="18" rx="9" fill="#1e293b"/>
+    <rect x="318" y="452" width="44" height="18" rx="9" fill="#1e293b"/>
+    <!-- torso -->
+    <rect x="272" y="262" width="92" height="130" rx="28" fill="#2f4d6e"/>
+    <rect x="272" y="348" width="92" height="13" rx="6" fill="#1e293b"/>
+    <rect x="306" y="346" width="22" height="17" rx="4" fill="#14b8a6"/>
+    <!-- chest badge -->
+    <path d="M292 292l12 4v10c0 9 -12 15 -12 15s-12 -6 -12 -15v-10z" fill="#14b8a6"/>
+    <!-- rear arm holding strap -->
+    <path d="M280 288l-26 44" stroke="#2f4d6e" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="252" cy="336" r="12" fill="#14b8a6"/>
+    <!-- head -->
+    <circle cx="318" cy="218" r="35" fill="#f2c094"/>
+    <path d="M283 212a35 35 0 0 1 70 0z" fill="#0f766e"/>
+    <rect x="300" y="200" width="76" height="12" rx="6" fill="#0f766e"/>
+    <circle cx="326" cy="226" r="3.6" fill="#1e293b"/>
+    <circle cx="344" cy="226" r="3.6" fill="#1e293b"/>
+    <path d="M328 242c6 5 12 5 17 0" fill="none" stroke="#c98a5b" stroke-width="3.4" stroke-linecap="round"/>
+    <!-- front arm + spray wand -->
+    <path d="M356 288l62 34" stroke="#2f4d6e" stroke-width="21" stroke-linecap="round"/>
+    <circle cx="422" cy="324" r="13" fill="#14b8a6"/>
+    <path d="M430 322l84 -26" stroke="#475569" stroke-width="9" stroke-linecap="round"/>
+    <rect x="508" y="284" width="22" height="14" rx="6" fill="#334155" transform="rotate(-17 519 291)"/>
+  </g>
+
+  <!-- spray burst -->
+  <g fill="#14b8a6">
+    <circle cx="560" cy="272" r="7" fill-opacity=".9"/>
+    <circle cx="592" cy="290" r="6" fill-opacity=".7"/>
+    <circle cx="584" cy="248" r="6" fill-opacity=".7"/>
+    <circle cx="622" cy="268" r="5" fill-opacity=".55"/>
+    <circle cx="612" cy="312" r="5" fill-opacity=".5"/>
+    <circle cx="614" cy="228" r="4" fill-opacity=".4"/>
+    <circle cx="648" cy="292" r="4" fill-opacity=".35"/>
+    <circle cx="644" cy="246" r="3" fill-opacity=".3"/>
+  </g>
+
+  <!-- defeated cockroach -->
+  <g transform="translate(612 440) rotate(168)">
+    <ellipse cx="0" cy="0" rx="24" ry="34" fill="#7c4a1e"/>
+    <circle cx="0" cy="-34" r="13" fill="#5d3413"/>
+    <g fill="none" stroke="#5d3413" stroke-width="5" stroke-linecap="round">
+      <path d="M-20 -16l-20 -10M-24 2h-20M-20 18l-20 12M20 -16l20 -10M24 2h20M20 18l20 12"/>
+      <path d="M-6 -44l-8 -16M6 -44l8 -16"/>
+    </g>
+    <path d="M-8 -6l16 12M8 -6l-16 12" stroke="#fbbf77" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- second bug fleeing -->
+  <g transform="translate(700 388) rotate(-18)" opacity=".85">
+    <ellipse cx="0" cy="0" rx="13" ry="19" fill="#8a5a2b"/>
+    <circle cx="0" cy="-19" r="8" fill="#6b4220"/>
+    <g fill="none" stroke="#6b4220" stroke-width="3.4" stroke-linecap="round">
+      <path d="M-11 -9l-11 -6M-13 1h-11M-11 10l-11 7M11 -9l11 -6M13 1h11M11 10l11 7"/>
+    </g>
+    <path d="M-30 8c-8 2 -14 8 -14 8M-28 18c-6 0 -12 4 -12 4" stroke="#b7c6d4" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- shield emblem -->
+  <g transform="translate(474 396)">
+    <path d="M40 0l40 15v32c0 30 -40 50 -40 50s-40 -20 -40 -50V15z" fill="#0f766e"/>
+    <path d="M40 8l32 12v27c0 24 -32 40 -32 40s-32 -16 -32 -40V20z" fill="#14b8a6"/>
+    <path d="M24 48l12 12 22 -24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- floating sparkles (clean home) -->
+  <g fill="#f59e0b">
+    <path d="M180 330l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+    <path d="M700 150l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" opacity=".8"/>
+    <path d="M420 120l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" opacity=".6"/>
+  </g>
+</svg>

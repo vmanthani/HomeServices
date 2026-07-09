@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <!-- Illustrated scene: kitchen pest treatment. Replace with a photo any time. -->
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="480" rx="28" fill="url(#panel)"/>
+  <circle cx="670" cy="90" r="110" fill="#d9f2ec"/>
+  <circle cx="90" cy="420" r="70" fill="#fdeccc"/>
+
+  <!-- kitchen counter -->
+  <g>
+    <rect x="70" y="200" width="280" height="24" rx="8" fill="#334155"/>
+    <rect x="86" y="224" width="248" height="150" rx="10" fill="#e3edf5"/>
+    <path d="M210 224v150" stroke="#cfdeeb" stroke-width="6"/>
+    <rect x="140" y="286" width="10" height="34" rx="5" fill="#94a3b8"/>
+    <rect x="272" y="286" width="10" height="34" rx="5" fill="#94a3b8"/>
+    <!-- jars on the counter -->
+    <rect x="104" y="158" width="40" height="42" rx="8" fill="#8fd0c2"/>
+    <rect x="112" y="148" width="24" height="14" rx="5" fill="#0f766e"/>
+    <rect x="156" y="170" width="32" height="30" rx="7" fill="#f6c66b"/>
+  </g>
+  <!-- floor -->
+  <path d="M40 404h720" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="500" cy="416" rx="120" ry="13" fill="rgba(15,23,42,.07)"/>
+
+  <!-- gloved hand applying gel from the right -->
+  <g>
+    <rect x="668" y="196" width="132" height="66" rx="30" fill="#2f4d6e"/>
+    <circle cx="666" cy="228" r="26" fill="#14b8a6"/>
+    <rect x="586" y="220" width="70" height="16" rx="8" fill="#475569"/>
+    <rect x="576" y="223" width="18" height="10" rx="5" fill="#334155"/>
+    <!-- gel dots trailing -->
+    <circle cx="548" cy="228" r="6" fill="#14b8a6"/>
+    <circle cx="518" cy="234" r="5" fill="#14b8a6" opacity=".75"/>
+    <circle cx="490" cy="244" r="4.5" fill="#14b8a6" opacity=".55"/>
+    <circle cx="466" cy="258" r="4" fill="#14b8a6" opacity=".4"/>
+  </g>
+
+  <!-- big defeated cockroach -->
+  <g transform="translate(470 372) rotate(172)">
+    <ellipse cx="0" cy="0" rx="30" ry="44" fill="#7c4a1e"/>
+    <circle cx="0" cy="-44" r="16" fill="#5d3413"/>
+    <g fill="none" stroke="#5d3413" stroke-width="6" stroke-linecap="round">
+      <path d="M-26 -20l-24 -12M-30 2h-24M-26 22l-24 14M26 -20l24 -12M30 2h24M26 22l24 14"/>
+      <path d="M-8 -56l-10 -18M8 -56l10 -18"/>
+    </g>
+    <path d="M-10 -8l20 16M10 -8l-20 16" stroke="#fbbf77" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- ant trail interrupted -->
+  <g fill="#475569">
+    <circle cx="250" cy="396" r="5"/><circle cx="262" cy="393" r="4"/>
+    <circle cx="286" cy="396" r="5"/><circle cx="298" cy="393" r="4"/>
+    <circle cx="322" cy="396" r="5"/><circle cx="334" cy="393" r="4"/>
+  </g>
+  <path d="M356 380l22 22M378 380l-22 22" stroke="#e11d48" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- sparkles -->
+  <g fill="#f59e0b">
+    <path d="M420 120l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+    <path d="M600 330l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" opacity=".7"/>
+    <path d="M180 120l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" opacity=".6"/>
+  </g>
+</svg>
