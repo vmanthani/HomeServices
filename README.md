@@ -74,6 +74,19 @@ total) — no Google Fonts request at page load. To change fonts, replace the
 `.woff2` files and the `@font-face` + `--font`/`--font-head` rules at the top
 of `css/style.css`.
 
+## 🛠 Editing page content (not just config)
+
+All pages except `index.html` are **generated** by `tools/build-pages.js`:
+
+- To change shared parts (header, nav, footer, bottom nav): edit them in
+  `index.html`, then run `node tools/build-pages.js` — every other page is
+  rebuilt with the same header/footer.
+- To change inner-page content (service descriptions, FAQs, About text):
+  edit the page definitions inside `tools/build-pages.js` and re-run it.
+  Don't edit the generated `.html` files directly — the next build
+  overwrites them.
+- `node tools/check-links.js` verifies no internal link is broken.
+
 ## 🚀 Deploying to Hostinger
 
 1. Log in to Hostinger → **hPanel → File Manager** (or connect via FTP).
