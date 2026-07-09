@@ -451,13 +451,13 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
 }
 .price-tile-meta { font-size: .8rem; color: var(--muted); }
 .price-tile-old {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--muted);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #64748b;
   text-decoration: line-through;
   text-decoration-color: #e11d48;
-  text-decoration-thickness: 2px;
-  margin-bottom: -.5rem;
+  text-decoration-thickness: 2.5px;
+  margin-bottom: -.45rem;
 }
 .price-tile-off {
   position: absolute;
