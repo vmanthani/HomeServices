@@ -60,9 +60,15 @@
     const tiles = svc.tiers
       .map((t) => {
         const msg = encodeURIComponent(`Hi! I'd like to book ${svc.name} for my ${t.label}.`);
+        const off =
+          t.oldPrice && t.oldPrice > t.price
+            ? Math.round((1 - t.price / t.oldPrice) * 100)
+            : 0;
         return (
           `<div class="price-tile">` +
+          (off ? `<span class="price-tile-off">${off}% OFF</span>` : "") +
           `<span class="price-tile-label">${t.label}</span>` +
+          (off ? `<span class="price-tile-old">${money(t.oldPrice)}</span>` : "") +
           `<span class="price-tile-amount">${money(t.price)}</span>` +
           `<span class="price-tile-meta">${svc.warranty}</span>` +
           `<a class="btn btn-outline price-tile-btn" href="https://wa.me/${C.whatsapp}?text=${msg}" target="_blank" rel="noopener">Book Now</a>` +

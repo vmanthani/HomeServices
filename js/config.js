@@ -75,7 +75,12 @@ const SITE_CONFIG = {
      Add / remove tiers freely — tables rebuild automatically. */
   /* Each service has its own accent colour ("color") used for its
      title strip, icons and pricing — chrome (buttons, header, footer)
-     always stays on the main brand theme. */
+     always stays on the main brand theme.
+
+     PROMOTIONAL PRICING: add an optional `oldPrice` to any tier to show
+     a strike-through original price and an auto-calculated "% OFF"
+     ribbon on that pricing tile (see the general tiers below for an
+     example). Delete `oldPrice` to remove the promotion. */
   services: {
     general: {
       name: "General Pest Control",
@@ -83,10 +88,10 @@ const SITE_CONFIG = {
       warranty: "3-Month Warranty",
       priceFrom: 1495,
       tiers: [
-        { label: "1 BHK", price: 1495 },
-        { label: "2 BHK", price: 1595 },
-        { label: "3 BHK", price: 1795 },
-        { label: "4 BHK / Villa", price: 1995 }
+        { label: "1 BHK", price: 1495, oldPrice: 1995 },
+        { label: "2 BHK", price: 1595, oldPrice: 2095 },
+        { label: "3 BHK", price: 1795, oldPrice: 2395 },
+        { label: "4 BHK / Villa", price: 1995, oldPrice: 2695 }
       ]
     },
     termite: {

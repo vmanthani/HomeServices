@@ -450,6 +450,28 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
   color: transparent;
 }
 .price-tile-meta { font-size: .8rem; color: var(--muted); }
+.price-tile-old {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: #e11d48;
+  text-decoration-thickness: 2px;
+  margin-bottom: -.5rem;
+}
+.price-tile-off {
+  position: absolute;
+  top: 16px;
+  right: -34px;
+  rotate: 45deg;
+  background: linear-gradient(135deg, #e11d48, #be123c);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  padding: .3rem 2.6rem;
+  box-shadow: 0 2px 8px rgba(190, 18, 60, .35);
+}
 .price-tile-btn { margin-top: .7rem; padding: .55rem 1.4rem; font-size: .85rem; }
 .pricing-note { font-size: .85rem; color: var(--muted); margin-top: 1.1rem; text-align: center; }
 

@@ -28,6 +28,10 @@ No frameworks, no build step, no backend — just HTML, CSS and vanilla JavaScri
 - **All prices** — each service has price tiers by home size (1 BHK, 2 BHK, …).
   Add or remove tiers freely; the pricing tiles rebuild automatically, each with
   its own "Book Now" WhatsApp link mentioning the service and home size.
+- **Promotional discounts** — add `oldPrice` to any tier to show a
+  strike-through original price plus an auto-calculated "% OFF" ribbon on
+  that tile (General Pest Control tiers ship with an example). Delete
+  `oldPrice` to end the promotion.
 
 No HTML editing is required for any of the above. The brand name inside
 page `<title>` tags is also replaced automatically from config.
