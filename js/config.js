@@ -100,7 +100,7 @@ const SITE_CONFIG = {
      example). Delete `oldPrice` to remove the promotion. */
   services: {
     general: {
-      name: "GPC (General Pest Control)",
+      name: "GPC Treatment",
       color: "#10b981",
       warranty: "3-Month Warranty",
       priceFrom: 1495,

@@ -184,13 +184,13 @@ const pages = {};
 
 /* ---------- General Pest Control ---------- */
 pages["pest-control.html"] = {
-  title: "GPC (General Pest Control) in Delhi NCR | PESTNEST",
-  desc: "GPC — general pest control in Delhi NCR for cockroaches, ants & spiders. Safe, odour-free treatment with 3-month warranty. Fixed prices by home size — book on WhatsApp.",
+  title: "GPC Treatment — General Pest Control in Delhi NCR | PESTNEST",
+  desc: "GPC Treatment (general pest control) in Delhi NCR for cockroaches, ants & spiders. Safe, odour-free treatment with 3-month warranty. Fixed prices by home size — book on WhatsApp.",
   body:
     pageHero(
-      "GPC (General Pest Control)",
-      "GPC (General Pest Control)",
-      "Complete protection against cockroaches, ants, spiders and other common household pests. Low-odour gel and spray treatment that is safe for children and pets — backed by a 3-month warranty.",
+      "GPC Treatment",
+      "GPC Treatment",
+      "Complete general pest control against cockroaches, ants, spiders and other common household pests. Low-odour gel and spray treatment that is safe for children and pets — backed by a 3-month warranty.",
       "3-Month Service Warranty",
       "general"
     ) +
@@ -480,7 +480,7 @@ pages["contact.html"] = {
             <label>Service Needed
               <select name="service" required>
                 <option value="" disabled selected>Select a service</option>
-                <option>GPC (General Pest Control)</option>
+                <option>GPC Treatment</option>
                 <option>Termite Treatment</option>
                 <option>Bed Bug Treatment</option>
                 <option>Rodent Treatment</option>
