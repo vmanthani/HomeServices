@@ -39,7 +39,7 @@ const SITE_CONFIG = {
      Leave a path empty ("") to hide that picture slot — the page
      falls back to the clean gradient look automatically. */
   images: {
-    hero: "images/hero.svg",             // home page, right of the headline
+    hero: "images/hero.jpeg",            // home page, right of the headline
     general: "images/GPC.jpeg",          // GPC (General Pest Control) page banner
     termite: "images/Termites.jpeg",     // Termite Treatment page banner
     bedbug: "images/BedBug.jpeg",        // Bed Bug Treatment page banner
