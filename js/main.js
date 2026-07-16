@@ -133,6 +133,47 @@
     el.appendChild(f);
   });
 
+  /* ---------- coverage map: <div data-coverage-map></div> (Leaflet + OSM, no API key) ---------- */
+  const coverageEls = $$("[data-coverage-map]");
+  if (coverageEls.length && Array.isArray(C.coverage) && C.coverage.length) {
+    loadLeaflet(() => coverageEls.forEach(initCoverage));
+  }
+  function loadLeaflet(cb) {
+    if (window.L) return cb();
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+    css.integrity = "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=";
+    css.crossOrigin = "";
+    document.head.appendChild(css);
+    const js = document.createElement("script");
+    js.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    js.integrity = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=";
+    js.crossOrigin = "";
+    js.onload = cb;
+    document.body.appendChild(js);
+  }
+  function initCoverage(el) {
+    if (!window.L) return;
+    const brand = getComputedStyle(document.documentElement).getPropertyValue("--brand").trim() || "#0e9f6e";
+    // an initial view is required before vector layers can project
+    const map = L.map(el, { scrollWheelZoom: false }).setView([28.55, 77.2], 9);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+    const circles = C.coverage.map((a) => {
+      const c = L.circle([a.lat, a.lng], {
+        radius: (a.radiusKm || 8) * 1000,
+        color: brand, weight: 2, opacity: 0.9, fillColor: brand, fillOpacity: 0.16,
+      }).addTo(map);
+      c.bindTooltip(a.name, { permanent: true, direction: "center", className: "coverage-label" });
+      return c;
+    });
+    map.fitBounds(L.featureGroup(circles).getBounds().pad(0.12));
+    setTimeout(() => map.invalidateSize(), 300);
+  }
+
   /* ---------- optional pictures: <div class="hero-media" data-image="hero"></div> ----------
      Shows the slot only if a path is configured AND the file loads,
      so a missing image can never leave a broken layout. */

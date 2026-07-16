@@ -105,6 +105,17 @@ const SITE_CONFIG = {
     "Ghaziabad", "Faridabad"
   ],
 
+  /* ---------- Coverage map ----------
+     Draws a labelled circle over each area on an interactive map
+     (Leaflet + OpenStreetMap, no API key). radiusKm ≈ size of the zone. */
+  coverage: [
+    { name: "Delhi (All Areas)", lat: 28.6139, lng: 77.2090, radiusKm: 16 },
+    { name: "Gurugram",          lat: 28.4595, lng: 77.0266, radiusKm: 9 },
+    { name: "Noida",             lat: 28.5355, lng: 77.3910, radiusKm: 8 },
+    { name: "Ghaziabad",         lat: 28.6692, lng: 77.4538, radiusKm: 9 },
+    { name: "Faridabad",         lat: 28.4089, lng: 77.3178, radiusKm: 9 }
+  ],
+
   /* ---------- Services & pricing ----------
      Each tier renders one row in the pricing tables.
      Add / remove tiers freely — tables rebuild automatically. */
