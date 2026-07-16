@@ -51,6 +51,11 @@
     if (kind === "mailto") el.href = "mailto:" + C.email;
     if (kind === "whatsapp")
       el.href = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(C.whatsappMessage);
+    if (kind === "map" && C.mapLink) {
+      el.href = C.mapLink;
+      el.target = "_blank";
+      el.rel = "noopener";
+    }
   });
 
   /* ---------- pricing tiles: <div data-pricing="general"></div> ---------- */
@@ -87,6 +92,18 @@
   });
   $$("[data-areas-list]").forEach((el) => {
     el.innerHTML = C.areas.map((a) => `<li>${a}</li>`).join("");
+  });
+
+  /* ---------- Google Maps embed: <div data-map-embed></div> ---------- */
+  $$("[data-map-embed]").forEach((el) => {
+    if (!C.mapEmbedUrl) return;
+    const f = document.createElement("iframe");
+    f.src = C.mapEmbedUrl;
+    f.title = C.brandName + " office location on Google Maps";
+    f.loading = "lazy";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.setAttribute("allowfullscreen", "");
+    el.appendChild(f);
   });
 
   /* ---------- optional pictures: <div class="hero-media" data-image="hero"></div> ----------
@@ -213,6 +230,10 @@
           addressCountry: C.postalAddress.country || "IN",
         }
       : { "@type": "PostalAddress", addressLocality: C.city, addressCountry: "IN" },
+    geo: C.geo
+      ? { "@type": "GeoCoordinates", latitude: C.geo.lat, longitude: C.geo.lng }
+      : undefined,
+    hasMap: C.mapLink || undefined,
     areaServed: C.areas.map((a) => ({ "@type": "City", name: a })),
     openingHours: C.hoursSchema || undefined,
     aggregateRating: C.rating

@@ -63,6 +63,11 @@ const SITE_CONFIG = {
     postalCode: "122010",
     country: "IN"
   },
+  /* Map — geo powers the schema; mapEmbedUrl is the Google Maps "Embed a map"
+     src; mapLink opens directions. Paste a fresh embed src to move the pin. */
+  geo: { lat: 28.4912825, lng: 77.0858652 },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9551.86017016786!2d77.08586518578058!3d28.491282471931406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d190035fdba9f%3A0xdaf76189aaa5e4ef!2sEWS%20apartment!5e1!3m2!1sen!2suk!4v1784178357292!5m2!1sen!2suk",
+  mapLink: "https://www.google.com/maps/dir/?api=1&destination=28.4912825,77.0858652",
 
   /* ---------- Legal / compliance (India: DPDP Act 2023, IT Act 2000) ----------
      These fill the legal pages. Replace the placeholders with the client's
