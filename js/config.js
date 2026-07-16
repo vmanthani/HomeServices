@@ -94,6 +94,11 @@ const SITE_CONFIG = {
   /* ---------- Currency ---------- */
   currency: "₹",
 
+  /* ---------- Offer badge ----------
+     Urgency line shown on the hero price-promo badge. Set to "" to hide.
+     A service shows a "% OFF" flash only when it has `oldPriceFrom` below. */
+  offerNote: "Limited Period Offer",
+
   /* ---------- Service areas (shown on home + footer) ---------- */
   areas: [
     "Delhi (All Areas)", "Gurugram", "Noida",
@@ -117,6 +122,7 @@ const SITE_CONFIG = {
       color: "#10b981",
       warranty: "3-Month Warranty",
       priceFrom: 1495,
+      oldPriceFrom: 1995,      // "was" price -> shows a % OFF flash on the hero badge
       tiers: [
         { label: "1 BHK", price: 1495, oldPrice: 1995 },
         { label: "2 BHK", price: 1595, oldPrice: 2095 },

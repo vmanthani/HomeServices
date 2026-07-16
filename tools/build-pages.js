@@ -75,11 +75,10 @@ const ctaBand = (h, p) => `  <section>
 
 const pageHero = (crumb, h1, lead, badge, imgKey) => {
   const isSvc = ["general", "termite", "bedbug", "rodent"].includes(imgKey);
-  const pricePill = isSvc
-    ? `<span class="badge-price"><small>From</small> <span data-price="services.${imgKey}.priceFrom"></span></span>`
-    : "";
+  const usp247 = `<span class="usp-247">Open 24×7</span>`;
+  const pricePromo = isSvc ? `<span class="price-promo" data-price-promo="${imgKey}"></span>` : "";
   const warranty = badge ? `<span class="badge-warranty">${shieldSvg} ${badge}</span>` : "";
-  const badges = pricePill || warranty ? `      <p class="hero-badges">${pricePill}${warranty}</p>\n` : "";
+  const badges = `      <div class="hero-badges">${usp247}${pricePromo}${warranty}</div>\n`;
   return `  <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">

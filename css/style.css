@@ -338,20 +338,62 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
 .badge-warranty svg { width: 14px; height: 14px; }
 .page-hero .badge-warranty { background: rgba(255,255,255,.92); border-color: transparent; }
 
-/* Hero price + warranty badges row */
-.hero-badges { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: 1.2rem 0 0; }
-.badge-price {
-  display: inline-flex; align-items: baseline; gap: .35rem;
-  font-family: var(--font-head); font-weight: 800; font-size: .95rem;
-  color: var(--brand-deep);
-  background: #fff;
-  border-radius: 999px; padding: .35rem .9rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,.14);
+/* Hero badges/USP row (price promo + 24×7 + warranty) */
+.hero-badges, .hero-usps { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin: 1.3rem 0 0; }
+
+/* "Open 24×7" USP pill with a live pulsing dot */
+.usp-247 {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--font-head); font-weight: 800; font-size: .9rem;
+  letter-spacing: .02em; text-transform: uppercase;
+  color: var(--brand-deep); background: #fff;
+  border-radius: 999px; padding: .5rem .95rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.16);
 }
-.badge-price small { font-size: .72em; font-weight: 700; opacity: .7; }
-/* Home hero starting-price line (on the coloured hero) */
-.hero-pricing { margin: 1.1rem 0 0; font-size: .98rem; font-weight: 600; color: rgba(255,255,255,.9); }
-.hero-pricing b { color: #fff; font-weight: 800; }
+.usp-247::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: #22c55e; box-shadow: 0 0 0 0 rgba(34,197,94,.7);
+  animation: livePulse 1.6s ease-out infinite;
+}
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.7); }
+  70%  { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+/* Promotional price badge */
+.price-promo {
+  display: inline-flex; align-items: stretch;
+  background: #fff; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+.promo-flag {
+  display: flex; align-items: center; text-align: center;
+  padding: .5rem .75rem; max-width: 74px; line-height: 1.05;
+  font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: #fff;
+  background: linear-gradient(135deg, #f59e0b, #d97706);   /* trust/star = amber */
+}
+.price-promo.has-off .promo-flag {
+  background: linear-gradient(135deg, #fb7185, #e11d48);    /* discount = rose */
+  animation: promoPulse 1.8s ease-in-out infinite;
+}
+@keyframes promoPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+.promo-main { display: flex; flex-direction: column; justify-content: center; padding: .4rem 1rem; }
+.promo-label { font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.promo-amount { display: flex; align-items: baseline; gap: .45rem; }
+.promo-amount s { color: #9aa4a0; font-size: .95rem; font-weight: 600; }
+.promo-amount b { font-family: var(--font-head); color: var(--brand-deep); font-size: 1.7rem; font-weight: 800; line-height: 1.1; }
+.promo-note { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: #e11d48; margin-top: .12rem; }
+.price-promo:not(.has-off) .promo-note { color: var(--brand-dark); }
+
+/* Home hero deal area */
+.hero-pricing { display: flex; flex-direction: column; gap: .55rem; align-items: flex-start; margin: 1.3rem 0 0; }
+.hero-pricing-cap { font-size: .88rem; font-weight: 600; color: rgba(255,255,255,.88); }
+.hero-pricing-cap b { color: #fff; font-weight: 800; }
+
+@media (prefers-reduced-motion: reduce) {
+  .usp-247::before, .price-promo.has-off .promo-flag { animation: none; }
+}
 
 /* ---------- Service accent styling ----------
    A short colour strip under titles + tinted icon/pricing identify

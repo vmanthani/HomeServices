@@ -50,6 +50,27 @@
     if (prices.length) el.textContent = money(Math.min(...prices));
   });
 
+  /* ---------- promotional price badge: <span data-price-promo="general"></span> ---------- */
+  $$("[data-price-promo]").forEach((el) => {
+    const svc = C.services[el.dataset.pricePromo];
+    if (!svc) return;
+    const now = svc.priceFrom;
+    const old = svc.oldPriceFrom;
+    const off = old && old > now ? Math.round((1 - now / old) * 100) : 0;
+    el.classList.add("price-promo");
+    if (off) el.classList.add("has-off");
+    el.innerHTML =
+      `<span class="promo-flag">${off ? off + "%<br>OFF" : "★ " + (C.rating || "")}</span>` +
+      `<span class="promo-main">` +
+        `<span class="promo-label">Starting from</span>` +
+        `<span class="promo-amount">` +
+          (off ? `<s>${money(old)}</s>` : "") +
+          `<b>${money(now)}</b>` +
+        `</span>` +
+        `<span class="promo-note">${off ? (C.offerNote || "Save " + off + "%") : "All-inclusive · No hidden charges"}</span>` +
+      `</span>`;
+  });
+
   /* ---------- link injection: data-config-href="tel|whatsapp|mailto" ---------- */
   $$("[data-config-href]").forEach((el) => {
     const kind = el.dataset.configHref;
