@@ -12,7 +12,7 @@ const SITE_CONFIG = {
   brandName: "PESTNEST",
   tagline: "Safe Home. Pest Free",
   city: "Delhi NCR",
-  logo: "images/Logo.jpeg",   // header logo (full lockup, shown in the top bar)
+  logo: "/images/Logo.jpeg",  // header logo (full lockup, shown in the top bar)
 
   /* ---------- SEO ----------
      Set siteUrl to the live domain (no trailing slash) once known,
@@ -39,12 +39,12 @@ const SITE_CONFIG = {
      Leave a path empty ("") to hide that picture slot — the page
      falls back to the clean gradient look automatically. */
   images: {
-    hero: "images/hero.jpeg",            // home page, right of the headline
-    general: "images/GPC.jpeg",          // GPC (General Pest Control) page banner
-    termite: "images/Termites.jpeg",     // Termite Treatment page banner
-    bedbug: "images/BedBug.jpeg",        // Bed Bug Treatment page banner
-    rodent: "images/Rodant.jpeg",        // Rodent Treatment page banner
-    about: "images/About.jpg"            // About Us page banner
+    hero: "/images/hero.jpeg",           // home page, right of the headline
+    general: "/images/GPC.jpeg",         // GPC (General Pest Control) page banner
+    termite: "/images/Termites.jpeg",    // Termite Treatment page banner
+    bedbug: "/images/BedBug.jpeg",       // Bed Bug Treatment page banner
+    rodent: "/images/Rodant.jpeg",       // Rodent Treatment page banner
+    about: "/images/About.jpg"           // About Us page banner
   },
 
   /* ---------- Contact (digits only for phone/whatsapp links) ---------- */

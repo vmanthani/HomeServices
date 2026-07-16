@@ -131,13 +131,16 @@
     const c = svcColor(el.dataset.service);
     if (c) el.style.setProperty("--svc", c);
   });
-  const pageFile = location.pathname.split("/").pop() || "index.html";
+  /* page slug — folder URLs (/pest-control/) or legacy /pest-control.html both work */
+  const slug = (location.pathname.split("/").filter(Boolean).pop() || "index").replace(/\.html$/, "");
+  const isHome = slug === "index";
+  const canonPath = isHome ? "/" : "/" + slug + "/";
   const pageSvc = {
-    "pest-control.html": "general",
-    "termite-treatment.html": "termite",
-    "bed-bug-treatment.html": "bedbug",
-    "rodent-control.html": "rodent",
-  }[pageFile];
+    "pest-control": "general",
+    "termite-treatment": "termite",
+    "bed-bug-treatment": "bedbug",
+    "rodent-control": "rodent",
+  }[slug];
   if (pageSvc && svcColor(pageSvc))
     document.documentElement.style.setProperty("--svc", svcColor(pageSvc));
 
@@ -158,9 +161,10 @@
   }
 
   /* ---------- highlight current page in nav ---------- */
-  const here = location.pathname.split("/").pop() || "index.html";
   $$(".main-nav a, .bottom-nav a").forEach((a) => {
-    if ((a.getAttribute("href") || "") === here) a.setAttribute("aria-current", "page");
+    const href = (a.getAttribute("href") || "").split("#")[0];
+    const linkSlug = (href.split("/").filter(Boolean).pop() || "index").replace(/\.html$/, "");
+    if (linkSlug === slug) a.setAttribute("aria-current", "page");
   });
 
   /* ---------- reveal on scroll ---------- */
@@ -195,7 +199,7 @@
     document.head.appendChild(m);
   };
   if (siteUrl) {
-    const canon = pageFile === "index.html" ? siteUrl + "/" : abs(pageFile);
+    const canon = siteUrl + canonPath;
     const link = document.createElement("link");
     link.rel = "canonical";
     link.href = canon;
@@ -293,7 +297,7 @@
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: siteUrl + "/" },
-        { "@type": "ListItem", position: 2, name: current, item: abs(pageFile) },
+        { "@type": "ListItem", position: 2, name: current, item: siteUrl + canonPath },
       ],
     });
   }
@@ -316,7 +320,7 @@
   /* Register the service worker (only over http/https — not file://). */
   if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch(() => {});
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
     });
   }
 

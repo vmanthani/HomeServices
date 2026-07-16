@@ -2,28 +2,28 @@
    Bump CACHE_VERSION whenever cached assets change to force an update. */
 const CACHE_VERSION = "pestnest-v1";
 const CORE_ASSETS = [
-  "index.html",
-  "pest-control.html",
-  "termite-treatment.html",
-  "bed-bug-treatment.html",
-  "rodent-control.html",
-  "about.html",
-  "contact.html",
-  "privacy-policy.html",
-  "terms-conditions.html",
-  "cookie-policy.html",
-  "refund-policy.html",
-  "disclaimer.html",
-  "grievance-redressal.html",
-  "css/style.css",
-  "js/config.js",
-  "js/main.js",
-  "manifest.json",
-  "fonts/poppins-800.woff2",
-  "fonts/inter-var.woff2",
-  "images/Logo.jpeg",
-  "images/icons/icon-192.png",
-  "images/icons/icon-512.png"
+  "/",
+  "/pest-control/",
+  "/termite-treatment/",
+  "/bed-bug-treatment/",
+  "/rodent-control/",
+  "/about/",
+  "/contact/",
+  "/privacy-policy/",
+  "/terms-conditions/",
+  "/cookie-policy/",
+  "/refund-policy/",
+  "/disclaimer/",
+  "/grievance-redressal/",
+  "/css/style.css",
+  "/js/config.js",
+  "/js/main.js",
+  "/manifest.json",
+  "/fonts/poppins-800.woff2",
+  "/fonts/inter-var.woff2",
+  "/images/Logo.jpeg",
+  "/images/icons/icon-192.png",
+  "/images/icons/icon-512.png"
 ];
 
 /* Install — precache the app shell (tolerate individual failures). */
@@ -66,7 +66,7 @@ self.addEventListener("fetch", (event) => {
           return res;
         })
         .catch(() =>
-          caches.match(req).then((cached) => cached || caches.match("index.html"))
+          caches.match(req).then((cached) => cached || caches.match("/"))
         )
     );
     return;

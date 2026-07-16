@@ -33,15 +33,15 @@ const head = (title, desc) => `<!DOCTYPE html>
   <meta property="og:description" content="${desc}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230e9f6e' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="PESTNEST">
-  <link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -807,9 +807,29 @@ pages["grievance-redressal.html"] = {
 `,
 };
 
-/* ============================================================ WRITE */
+/* ============================================================ WRITE
+   Clean folder URLs: each page is written as <slug>/index.html so it
+   serves at /<slug>/ (no .html). Internal .html links are rewritten to
+   the folder form. Assets use root-absolute paths so they resolve from
+   any depth. */
+const cleanLinks = (html) =>
+  html.replace(/(href|src)="([^"]+)"/g, (m, attr, val) => {
+    // leave absolute URLs, anchors, root-absolute and data/tel/mailto as-is
+    if (/^(https?:|tel:|mailto:|data:|\/|#)/.test(val)) return m;
+    const hm = val.match(/^([a-z0-9-]+)\.html(#.*)?$/i);
+    if (!hm) return m;
+    const name = hm[1], hash = hm[2] || "";
+    return `${attr}="${name === "index" ? "/" : "/" + name + "/"}${hash}"`;
+  });
+
 for (const [file, p] of Object.entries(pages)) {
-  const html = head(p.title, p.desc) + header + "\n\n" + p.body + tail;
-  fs.writeFileSync(path.join(ROOT, file), html, "utf8");
-  console.log("wrote", file, "(" + html.length + " bytes)");
+  const html = cleanLinks(head(p.title, p.desc) + header + "\n\n" + p.body + tail);
+  const slug = file.replace(/\.html$/, "");
+  const outDir = path.join(ROOT, slug);
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, "index.html"), html, "utf8");
+  // remove the old flat file if it exists (migration to folder URLs)
+  const oldFlat = path.join(ROOT, file);
+  if (fs.existsSync(oldFlat)) fs.unlinkSync(oldFlat);
+  console.log("wrote", slug + "/index.html", "(" + html.length + " bytes)");
 }
