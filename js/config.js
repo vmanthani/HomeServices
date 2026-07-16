@@ -77,7 +77,7 @@ const SITE_CONFIG = {
   jurisdiction: "Delhi",                   // city whose courts govern disputes
   grievanceOfficer: {
     name: "Grievance Officer",             // name of the appointed officer (IT Rules 2021 / DPDP)
-    email: "grievance@pestnest.co.in",     // dedicated grievance & data-protection inbox
+    email: "support@pestnest.co.in",       // grievance & data-protection inbox (shared support inbox)
     phone: "+91 87968 16490"
   },
 
