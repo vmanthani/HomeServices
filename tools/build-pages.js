@@ -73,7 +73,14 @@ const ctaBand = (h, p) => `  <section>
 
 `;
 
-const pageHero = (crumb, h1, lead, badge, imgKey) => `  <section class="page-hero">
+const pageHero = (crumb, h1, lead, badge, imgKey) => {
+  const isSvc = ["general", "termite", "bedbug", "rodent"].includes(imgKey);
+  const pricePill = isSvc
+    ? `<span class="badge-price"><small>From</small> <span data-price="services.${imgKey}.priceFrom"></span></span>`
+    : "";
+  const warranty = badge ? `<span class="badge-warranty">${shieldSvg} ${badge}</span>` : "";
+  const badges = pricePill || warranty ? `      <p class="hero-badges">${pricePill}${warranty}</p>\n` : "";
+  return `  <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / ${crumb}</nav>
@@ -81,14 +88,14 @@ const pageHero = (crumb, h1, lead, badge, imgKey) => `  <section class="page-her
       <span class="title-strip"></span>
       <p class="lead">${lead}</p>
 ${heroActions}
-      ${badge ? `<p style="margin-top:1.2rem;margin-bottom:0"><span class="badge-warranty">${shieldSvg} ${badge}</span></p>` : ""}
-      </div>
+${badges}      </div>
       ${imgKey ? `<div class="page-hero-media" data-image="${imgKey}" data-image-alt="${h1} — professional service"></div>` : ""}
     </div>
     <div class="wave"><svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c220 34 440 34 720 6s500-30 720-2v20H0z" fill="#fff"/></svg></div>
   </section>
 
 `;
+};
 
 const faqSection = (items) => `  <section class="alt-bg">
     <div class="container">

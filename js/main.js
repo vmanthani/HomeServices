@@ -44,6 +44,12 @@
     if (v != null) el.textContent = money(v);
   });
 
+  /* ---------- lowest starting price: <span data-price-min></span> ---------- */
+  $$("[data-price-min]").forEach((el) => {
+    const prices = Object.values(C.services).map((s) => s.priceFrom).filter((n) => n != null);
+    if (prices.length) el.textContent = money(Math.min(...prices));
+  });
+
   /* ---------- link injection: data-config-href="tel|whatsapp|mailto" ---------- */
   $$("[data-config-href]").forEach((el) => {
     const kind = el.dataset.configHref;

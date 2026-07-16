@@ -20,7 +20,7 @@ const SITE_CONFIG = {
      social-share URLs and richer structured data. Also replace the
      placeholder domain inside sitemap.xml before going live. */
   siteUrl: "https://pestnest.co.in",
-  hoursSchema: "Mo-Su 08:00-21:00",   // machine-readable version of `hours`
+  hoursSchema: "Mo-Su 00:00-23:59",   // machine-readable version of `hours` (24×7)
 
   /* ---------- Colour theme ----------
      Pick one of the presets below (or add your own).
@@ -53,7 +53,7 @@ const SITE_CONFIG = {
   whatsapp: "918796816490",          // used in wa.me links (country code, no +)
   whatsappMessage: "Hi! I'd like to book a pest control service.",
   email: "support@pestnest.co.in",   // main contact inbox
-  hours: "Mon–Sun · 8:00 AM – 9:00 PM",
+  hours: "Open 24×7 — every day",
   address: "DLF Phase 3, U-Block, EWS Apartment E-209, Gurugram, Haryana 122010",
   /* Structured address — powers the LocalBusiness map/schema (local SEO). */
   postalAddress: {
