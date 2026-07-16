@@ -52,7 +52,7 @@ const SITE_CONFIG = {
   phoneDisplay: "+91 87968 16490",   // shown to visitors
   whatsapp: "918796816490",          // used in wa.me links (country code, no +)
   whatsappMessage: "Hi! I'd like to book a pest control service.",
-  email: "info@pestnest.in",         // placeholder — swap for the real inbox before launch
+  email: "support@pestnest.co.in",   // main contact inbox
   hours: "Mon–Sun · 8:00 AM – 9:00 PM",
   address: "DLF Phase 3, U-Block, EWS Apartment E-209, Gurugram, Haryana 122010",
   /* Structured address — powers the LocalBusiness map/schema (local SEO). */
@@ -77,7 +77,7 @@ const SITE_CONFIG = {
   jurisdiction: "Delhi",                   // city whose courts govern disputes
   grievanceOfficer: {
     name: "Grievance Officer",             // name of the appointed officer (IT Rules 2021 / DPDP)
-    email: "grievance@pestnest.in",        // dedicated grievance & data-protection inbox
+    email: "grievance@pestnest.co.in",     // dedicated grievance & data-protection inbox
     phone: "+91 87968 16490"
   },
 
