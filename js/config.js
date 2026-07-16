@@ -9,16 +9,17 @@
 const SITE_CONFIG = {
 
   /* ---------- Brand ---------- */
-  brandName: "PestShield",
-  tagline: "Pest Control Simplified",
+  brandName: "PESTNEST",
+  tagline: "Safe Home. Pest Free",
   city: "Delhi NCR",
+  logo: "images/Logo.jpeg",   // header logo (full lockup, shown in the top bar)
 
   /* ---------- SEO ----------
      Set siteUrl to the live domain (no trailing slash) once known,
      e.g. "https://www.pestshield.in". This enables canonical URLs,
      social-share URLs and richer structured data. Also replace the
      placeholder domain inside sitemap.xml before going live. */
-  siteUrl: "",
+  siteUrl: "https://pestnest.co.in",
   hoursSchema: "Mo-Su 08:00-21:00",   // machine-readable version of `hours`
 
   /* ---------- Colour theme ----------
@@ -38,22 +39,38 @@ const SITE_CONFIG = {
      Leave a path empty ("") to hide that picture slot — the page
      falls back to the clean gradient look automatically. */
   images: {
-    hero: "images/hero.svg",          // home page, right of the headline
-    general: "images/general.svg",    // General Pest Control page banner
-    termite: "images/termite.svg",    // Termite Treatment page banner
-    bedbug: "images/bedbug.svg",      // Bed Bug Treatment page banner
-    rodent: "images/rodent.svg",      // Rodent Control page banner
-    about: "images/about.svg"         // About Us page banner
+    hero: "images/hero.svg",             // home page, right of the headline
+    general: "images/GPC.jpeg",          // GPC (General Pest Control) page banner
+    termite: "images/Termites.jpeg",     // Termite Treatment page banner
+    bedbug: "images/BedBug.jpeg",        // Bed Bug Treatment page banner
+    rodent: "images/Rodant.jpeg",        // Rodent Treatment page banner
+    about: "images/About.jpg"            // About Us page banner
   },
 
   /* ---------- Contact (digits only for phone/whatsapp links) ---------- */
-  phone: "+918595000000",            // used in tel: links
-  phoneDisplay: "+91 85950 00000",   // shown to visitors
-  whatsapp: "918595000000",          // used in wa.me links (country code, no +)
+  phone: "+918796816490",            // used in tel: links
+  phoneDisplay: "+91 87968 16490",   // shown to visitors
+  whatsapp: "918796816490",          // used in wa.me links (country code, no +)
   whatsappMessage: "Hi! I'd like to book a pest control service.",
-  email: "info@pestshield.in",
+  email: "info@pestnest.in",         // placeholder — swap for the real inbox before launch
   hours: "Mon–Sun · 8:00 AM – 9:00 PM",
   address: "Delhi NCR, India",
+
+  /* ---------- Legal / compliance (India: DPDP Act 2023, IT Act 2000) ----------
+     These fill the legal pages. Replace the placeholders with the client's
+     registered details and appointed officer BEFORE going live, and have a
+     lawyer review the final wording. */
+  legalEntity: "PESTNEST",                 // registered business/trade name used in legal docs
+  jurisdiction: "Delhi",                   // city whose courts govern disputes
+  grievanceOfficer: {
+    name: "Grievance Officer",             // name of the appointed officer (IT Rules 2021 / DPDP)
+    email: "grievance@pestnest.in",        // dedicated grievance & data-protection inbox
+    phone: "+91 87968 16490"
+  },
+
+  /* ---------- Website credit ---------- */
+  designer: "MVR IT Services Ltd",
+  designerUrl: "",                         // optional link on the footer credit ("" = plain text)
 
   /* ---------- Trust signals ---------- */
   rating: "4.9",
@@ -66,8 +83,8 @@ const SITE_CONFIG = {
 
   /* ---------- Service areas (shown on home + footer) ---------- */
   areas: [
-    "Delhi", "Gurgaon", "Noida",
-    "Greater Noida", "Ghaziabad", "Faridabad"
+    "Delhi (All Areas)", "Gurugram", "Noida",
+    "Ghaziabad", "Faridabad"
   ],
 
   /* ---------- Services & pricing ----------
@@ -83,7 +100,7 @@ const SITE_CONFIG = {
      example). Delete `oldPrice` to remove the promotion. */
   services: {
     general: {
-      name: "General Pest Control",
+      name: "GPC (General Pest Control)",
       color: "#10b981",
       warranty: "3-Month Warranty",
       priceFrom: 1495,
@@ -120,7 +137,7 @@ const SITE_CONFIG = {
       ]
     },
     rodent: {
-      name: "Rodent Control",
+      name: "Rodent Treatment",
       color: "#6366f1",
       warranty: "3-Month Warranty",
       priceFrom: 1295,

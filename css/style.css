@@ -179,6 +179,8 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
 .brand:hover { color: var(--ink); }
 .brand svg { width: 34px; height: 34px; flex: none; color: var(--brand); }
 .brand svg path:first-child { fill: color-mix(in srgb, currentColor 14%, transparent); }
+.brand-logo { height: 56px; width: auto; display: block; flex: none; }
+@media (max-width: 560px) { .brand-logo { height: 46px; } }
 
 .main-nav { display: flex; align-items: center; gap: 1.05rem; }
 .main-nav a {
@@ -679,7 +681,70 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; }
+}
+.footer-credit a { color: rgba(255,255,255,.72); font-weight: 600; }
+.footer-credit a:hover { color: #fff; }
+
+/* ---------- Cookie / data-use consent ---------- */
+.cookie-consent {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 120;
+  max-width: 720px;
+  margin-inline: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(3, 32, 24, .22);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1.25rem;
+}
+.cookie-consent[hidden] { display: none; }
+.cookie-consent p { margin: 0; flex: 1 1 320px; font-size: .86rem; color: var(--muted); line-height: 1.5; }
+.cookie-consent-actions { display: flex; gap: .6rem; flex: 0 0 auto; margin-left: auto; }
+.cookie-consent-actions .btn { padding: .5rem 1.1rem; font-size: .85rem; }
+@media (max-width: 560px) {
+  .cookie-consent { left: .6rem; right: .6rem; bottom: .6rem; padding: 1rem; }
+  .cookie-consent-actions { width: 100%; }
+  .cookie-consent-actions .btn { flex: 1; }
+}
+
+/* ---------- PWA install prompt ---------- */
+.install-prompt {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 121;
+  max-width: 460px;
+  margin-inline: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(3, 32, 24, .22);
+  padding: 1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
+}
+.install-prompt[hidden] { display: none; }
+.install-icon { width: 48px; height: 48px; border-radius: 12px; flex: none; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+.install-text { flex: 1 1 200px; min-width: 0; }
+.install-text strong { display: block; font-family: var(--font-head); font-size: .98rem; color: var(--ink); }
+.install-text span { display: block; font-size: .82rem; color: var(--muted); line-height: 1.45; }
+.install-actions { display: flex; gap: .5rem; margin-left: auto; }
+.install-actions .btn { padding: .5rem 1rem; font-size: .85rem; }
+@media (max-width: 560px) {
+  .install-prompt { left: .6rem; right: .6rem; bottom: .6rem; }
+  .install-actions { width: 100%; }
+  .install-actions .btn { flex: 1; }
 }
 
 /* ============================================================

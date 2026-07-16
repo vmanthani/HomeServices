@@ -268,6 +268,79 @@
     });
   }
 
+  /* ---------- website credit link (footer) ---------- */
+  $$("[data-designer]").forEach((el) => {
+    if (C.designerUrl) {
+      el.href = C.designerUrl;
+      el.target = "_blank";
+      el.rel = "noopener";
+    } else {
+      el.removeAttribute("href");   // plain text credit, not a link
+    }
+  });
+
+  /* ---------- PWA + consent (share safe localStorage helpers) ---------- */
+  const lsGet = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+
+  /* Register the service worker (only over http/https — not file://). */
+  if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
+
+  const consent = document.getElementById("cookie-consent");
+  const installEl = document.getElementById("install-prompt");
+  let deferredPrompt = null;
+
+  const maybeShowInstall = () => {
+    if (!installEl || !deferredPrompt) return;
+    if (consent && !consent.hidden) return;            // don't stack over the cookie notice
+    const s = lsGet("pn_install");
+    if (s === "dismissed" || s === "installed") return;
+    installEl.hidden = false;
+  };
+
+  /* Cookie / data-use consent banner */
+  if (consent) {
+    if (!lsGet("pn_consent")) consent.hidden = false;
+    consent.addEventListener("click", (e) => {
+      const choice = e.target.closest("[data-cookie]");
+      if (!choice) return;
+      lsSet("pn_consent", choice.dataset.cookie);
+      consent.hidden = true;
+      maybeShowInstall();                              // offer install once the notice is cleared
+    });
+  }
+
+  /* Install prompt (Chrome/Edge/Android fire beforeinstallprompt) */
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    maybeShowInstall();
+  });
+  if (installEl) {
+    installEl.addEventListener("click", async (e) => {
+      const btn = e.target.closest("[data-install]");
+      if (!btn) return;
+      if (btn.dataset.install === "go" && deferredPrompt) {
+        installEl.hidden = true;
+        deferredPrompt.prompt();
+        try { await deferredPrompt.userChoice; } catch (err) {}
+        lsSet("pn_install", "prompted");
+        deferredPrompt = null;
+      } else {
+        installEl.hidden = true;
+        lsSet("pn_install", "dismissed");
+      }
+    });
+  }
+  window.addEventListener("appinstalled", () => {
+    if (installEl) installEl.hidden = true;
+    lsSet("pn_install", "installed");
+  });
+
   /* ---------- contact form → opens WhatsApp with a prefilled message ---------- */
   const form = document.querySelector("#enquiry-form");
   if (form) {

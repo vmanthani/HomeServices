@@ -27,12 +27,18 @@ const head = (title, desc) => `<!DOCTYPE html>
   <meta name="geo.region" content="IN-DL">
   <meta name="geo.placename" content="Delhi NCR">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="PestShield">
+  <meta property="og:site_name" content="PESTNEST">
   <meta property="og:locale" content="en_IN">
   <meta property="og:title" content="${title.split(" | ")[0]}">
   <meta property="og:description" content="${desc}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%230e9f6e' d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="PESTNEST">
   <link rel="preload" href="fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
@@ -157,17 +163,33 @@ const pricingSection = (key, note) => `  <section id="pricing">
 
 `;
 
+const legalHero = (crumb, h1, sub) => `  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / ${crumb}</nav>
+      <h1>${h1}</h1>
+      <p class="lead" style="margin-bottom:0">${sub || "Last updated: <span data-year></span>"}</p>
+    </div>
+  </section>
+
+`;
+
+/* Contact block reused across legal pages (brand + officer details from config) */
+const legalContact = `      <p><strong><span data-config="brandName"></span></strong><br>
+        <span data-config="address"></span><br>
+        Phone / WhatsApp: <a data-config-href="tel"><span data-config="phoneDisplay"></span></a><br>
+        Email: <a data-config-href="mailto"><span data-config="email"></span></a></p>`;
+
 /* ============================================================ PAGES */
 const pages = {};
 
 /* ---------- General Pest Control ---------- */
 pages["pest-control.html"] = {
-  title: "Cockroach & General Pest Control in Delhi NCR | PestShield",
-  desc: "General pest control in Delhi NCR for cockroaches, ants & spiders. Safe, odour-free treatment with 3-month warranty. Fixed prices by home size — book on WhatsApp.",
+  title: "GPC (General Pest Control) in Delhi NCR | PESTNEST",
+  desc: "GPC — general pest control in Delhi NCR for cockroaches, ants & spiders. Safe, odour-free treatment with 3-month warranty. Fixed prices by home size — book on WhatsApp.",
   body:
     pageHero(
-      "General Pest Control",
-      "General Pest Control",
+      "GPC (General Pest Control)",
+      "GPC (General Pest Control)",
       "Complete protection against cockroaches, ants, spiders and other common household pests. Low-odour gel and spray treatment that is safe for children and pets — backed by a 3-month warranty.",
       "3-Month Service Warranty",
       "general"
@@ -212,7 +234,7 @@ pages["pest-control.html"] = {
 
 /* ---------- Termite Treatment ---------- */
 pages["termite-treatment.html"] = {
-  title: "Termite Treatment in Delhi NCR — 1-Year Warranty | PestShield",
+  title: "Termite Treatment in Delhi NCR — 1-Year Warranty | PESTNEST",
   desc: "Drill-fill-seal termite control in Delhi NCR for homes & offices. Protects walls, furniture & woodwork. Government-approved chemicals, 1-year warranty.",
   body:
     pageHero(
@@ -262,7 +284,7 @@ pages["termite-treatment.html"] = {
 
 /* ---------- Bed Bug Treatment ---------- */
 pages["bed-bug-treatment.html"] = {
-  title: "Bed Bug Treatment in Delhi NCR — 2-Visit Removal | PestShield",
+  title: "Bed Bug Treatment in Delhi NCR — 2-Visit Removal | PESTNEST",
   desc: "End bed bug bites with our two-visit intensive treatment across Delhi NCR. Covers beds, mattresses, curtains & furniture. 3-month warranty, same-day slots.",
   body:
     pageHero(
@@ -312,12 +334,12 @@ pages["bed-bug-treatment.html"] = {
 
 /* ---------- Rodent Control ---------- */
 pages["rodent-control.html"] = {
-  title: "Rat & Rodent Control in Delhi NCR | PestShield",
-  desc: "Professional rat & mice control in Delhi NCR — secured bait stations, traps and entry-point sealing. Safe for kids & pets. 3-month warranty. Book on WhatsApp.",
+  title: "Rodent Treatment in Delhi NCR — Rat & Mice Control | PESTNEST",
+  desc: "Professional rodent treatment in Delhi NCR — secured bait stations, traps and entry-point sealing for rats & mice. Safe for kids & pets. 3-month warranty. Book on WhatsApp.",
   body:
     pageHero(
-      "Rodent Control",
-      "Rodent Control",
+      "Rodent Treatment",
+      "Rodent Treatment",
       "Rats and mice chew wiring, contaminate food and multiply fast. Our rodent control programme combines secured baiting, trapping and entry-point management to clear them out — and keep them out.",
       "3-Month Service Warranty",
       "rodent"
@@ -362,7 +384,7 @@ pages["rodent-control.html"] = {
 
 /* ---------- About ---------- */
 pages["about.html"] = {
-  title: "About Us — Pest Control Experts in Delhi NCR | PestShield",
+  title: "About Us — Pest Control Experts in Delhi NCR | PESTNEST",
   desc: "We're on a mission to make professional, safe and transparent pest control accessible to every home. Verified technicians, fixed prices, written warranties.",
   body:
     pageHero(
@@ -413,7 +435,7 @@ pages["about.html"] = {
 
 /* ---------- Contact ---------- */
 pages["contact.html"] = {
-  title: "Contact Us — Book Pest Control in Delhi NCR | PestShield",
+  title: "Contact Us — Book Pest Control in Delhi NCR | PESTNEST",
   desc: "Book a pest control service or get a free quote. Call, WhatsApp or send an enquiry — we respond within minutes during working hours.",
   body:
     pageHero(
@@ -458,10 +480,10 @@ pages["contact.html"] = {
             <label>Service Needed
               <select name="service" required>
                 <option value="" disabled selected>Select a service</option>
-                <option>General Pest Control</option>
+                <option>GPC (General Pest Control)</option>
                 <option>Termite Treatment</option>
                 <option>Bed Bug Treatment</option>
-                <option>Rodent Control</option>
+                <option>Rodent Treatment</option>
                 <option>Other / Not sure</option>
               </select>
             </label>
@@ -488,55 +510,72 @@ pages["contact.html"] = {
 `,
 };
 
-/* ---------- Privacy Policy ---------- */
+/* ---------- Privacy Policy (DPDP Act 2023 + IT Act 2000 / SPDI Rules 2011) ---------- */
 pages["privacy-policy.html"] = {
-  title: "Privacy Policy | PestShield",
-  desc: "How we collect, use and protect your personal information when you use our website and pest control services.",
+  title: "Privacy Policy | PESTNEST",
+  desc: "How PESTNEST collects, uses, protects and shares your personal data — compliant with India's Digital Personal Data Protection Act, 2023.",
   body:
-    `  <section class="page-hero">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / Privacy Policy</nav>
-      <h1>Privacy Policy</h1>
-      <p class="lead" style="margin-bottom:0">Last updated: <span data-year></span></p>
-    </div>
-  </section>
-
-  <section>
+    legalHero("Privacy Policy", "Privacy Policy") +
+    `  <section>
     <div class="container legal-content">
-      <p><span data-config="brandName"></span> ("we", "us") respects your privacy. This policy explains what information we collect and how we use it.</p>
+      <p><span data-config="brandName"></span> ("we", "us", "our") is committed to protecting your privacy. This policy explains how we collect, use, store, share and protect your personal data, and the rights you have. It is framed in line with the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong>, the <strong>Information Technology Act, 2000</strong> and the <strong>SPDI Rules, 2011</strong>. In this policy, "personal data" means any data about an individual who is identifiable by or in relation to such data, and "you" / "Data Principal" means the person to whom the personal data relates.</p>
 
-      <h2>Information We Collect</h2>
+      <h2>1. Data We Collect</h2>
       <ul>
-        <li><strong>Contact details</strong> — your name, phone number and address, shared when you book a service or send an enquiry.</li>
-        <li><strong>Service details</strong> — the type of pest problem, home size and service history, used to deliver and warranty our work.</li>
-        <li><strong>Usage data</strong> — basic, anonymous website analytics if enabled by our hosting provider.</li>
+        <li><strong>Contact details</strong> — your name, phone number, WhatsApp number, email and service address, shared when you book a service or send an enquiry.</li>
+        <li><strong>Service details</strong> — the type of pest problem, home/premises size and service history, used to deliver and warranty our work.</li>
+        <li><strong>Communications</strong> — messages you send us by phone, WhatsApp, email or the website enquiry form.</li>
+        <li><strong>Technical &amp; usage data</strong> — limited data such as cookies your browser stores (see our <a href="cookie-policy.html">Cookie Policy</a>) and, if enabled by our host, anonymous, aggregated website analytics.</li>
       </ul>
+      <p>We do not knowingly collect sensitive personal data (such as financial, health or biometric data) through this website, and we do not process payments here.</p>
 
-      <h2>How We Use Your Information</h2>
+      <h2>2. Purpose &amp; Lawful Basis</h2>
+      <p>We process your personal data on the basis of your <strong>consent</strong> and for the following specified purposes:</p>
       <ul>
-        <li>To schedule, deliver and follow up on pest control services.</li>
+        <li>To schedule, deliver and follow up on pest control services you request.</li>
+        <li>To provide quotations and respond to your enquiries.</li>
         <li>To honour service warranties and handle re-service requests.</li>
-        <li>To respond to enquiries made by phone, WhatsApp, email or the website form.</li>
+        <li>To keep records required for legitimate business and legal/accounting obligations.</li>
       </ul>
 
-      <h2>What We Don't Do</h2>
+      <h2>3. Consent &amp; Withdrawal</h2>
+      <p>By submitting an enquiry, booking a service, or accepting our consent notice on this website, you consent to the processing of your personal data for the purposes above. Your consent is limited to what is necessary for these purposes. <strong>You may withdraw your consent at any time</strong> by contacting our Grievance Officer (details below); withdrawal is as easy as giving consent. Withdrawing consent does not affect processing already carried out, and may mean we can no longer provide a requested service.</p>
+
+      <h2>4. How We Share Data</h2>
       <ul>
-        <li>We do not sell, rent or trade your personal information to third parties.</li>
-        <li>We do not process payments through this website — no card or banking data is ever collected here.</li>
-        <li>We do not send marketing messages without your consent.</li>
+        <li><strong>Our service technicians</strong> — the verified technician assigned to your job receives the details needed to reach and serve you.</li>
+        <li><strong>Service providers (Data Processors)</strong> — hosting and communication tools (e.g. WhatsApp, when you use the enquiry form) that help us operate, under appropriate safeguards. Your use of WhatsApp is also governed by WhatsApp's own privacy policy.</li>
+        <li><strong>Legal requirements</strong> — where disclosure is required by law or a lawful authority.</li>
       </ul>
+      <p>We <strong>do not sell, rent or trade</strong> your personal data to third parties, and we do not send marketing messages without your consent.</p>
 
-      <h2>Data Retention &amp; Security</h2>
-      <p>Service records are retained only as long as needed to honour warranties and legal obligations. Access to customer information is limited to staff who need it to serve you.</p>
+      <h2>5. Data Retention &amp; Security</h2>
+      <p>We retain personal data only as long as necessary to fulfil the purposes above, to honour warranties, and to meet legal obligations — after which it is deleted or anonymised. We apply reasonable security safeguards to protect your data against unauthorised access, loss or misuse, and limit access to staff who need it to serve you.</p>
 
-      <h2>Third-Party Services</h2>
-      <p>Our enquiry form opens WhatsApp with your message pre-filled; sending it is subject to WhatsApp's own privacy policy. Links to external sites are governed by those sites' policies.</p>
+      <h2>6. Children's Data</h2>
+      <p>Our services are directed to adults. We do not knowingly process the personal data of children (individuals under 18) without verifiable consent of a parent or lawful guardian, and we do not undertake tracking, behavioural monitoring or targeted advertising directed at children, in accordance with the DPDP Act.</p>
 
-      <h2>Your Rights</h2>
-      <p>You may request a copy, correction or deletion of your personal information at any time by contacting us at <a data-config-href="mailto"><span data-config="email"></span></a> or <a data-config-href="tel"><span data-config="phoneDisplay"></span></a>.</p>
+      <h2>7. Your Rights as a Data Principal</h2>
+      <p>Subject to applicable law, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> — obtain a summary of the personal data we process about you and the processing activities.</li>
+        <li><strong>Correction &amp; updating</strong> — have inaccurate or incomplete data corrected or completed.</li>
+        <li><strong>Erasure</strong> — request deletion of your personal data where it is no longer required.</li>
+        <li><strong>Withdraw consent</strong> — as described in section 3.</li>
+        <li><strong>Grievance redressal</strong> — raise a complaint about our handling of your data (see our <a href="grievance-redressal.html">Grievance Redressal</a> page).</li>
+        <li><strong>Nominate</strong> — nominate another individual to exercise your rights in the event of death or incapacity.</li>
+      </ul>
+      <p>To exercise any right, contact our Grievance Officer using the details below. You also have the right to escalate an unresolved complaint to the <strong>Data Protection Board of India</strong>.</p>
 
-      <h2>Changes to This Policy</h2>
-      <p>We may update this policy from time to time. Material changes will be reflected on this page with a revised date.</p>
+      <h2>8. Grievance Officer / Data Protection Contact</h2>
+      <p>In accordance with the DPDP Act and the Information Technology Rules, our contact for privacy and data-protection matters is:</p>
+      <p><strong><span data-config="grievanceOfficer.name"></span></strong>, <span data-config="brandName"></span><br>
+        Email: <span data-config="grievanceOfficer.email"></span><br>
+        Phone: <span data-config="grievanceOfficer.phone"></span></p>
+      <p>We aim to acknowledge grievances within 48 hours and resolve them within the timelines prescribed under applicable law.</p>
+
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this policy from time to time. Material changes will be reflected on this page with a revised "last updated" date. Please review it periodically.</p>
     </div>
   </section>
 
@@ -545,7 +584,7 @@ pages["privacy-policy.html"] = {
 
 /* ---------- Terms & Conditions ---------- */
 pages["terms-conditions.html"] = {
-  title: "Terms & Conditions | PestShield",
+  title: "Terms & Conditions | PESTNEST",
   desc: "Terms of service for bookings, pricing, warranties and re-service for our pest control services.",
   body:
     `  <section class="page-hero">
@@ -594,8 +633,163 @@ pages["terms-conditions.html"] = {
       <h2>6. Liability</h2>
       <p>Our liability is limited to re-performing the service under warranty. We are not liable for pre-existing structural damage (for example, damage already caused by termites before treatment).</p>
 
-      <h2>7. Contact</h2>
+      <h2>7. Governing Law &amp; Jurisdiction</h2>
+      <p>These terms are governed by and construed in accordance with the laws of India. Any disputes are subject to the exclusive jurisdiction of the competent courts of <span data-config="jurisdiction"></span>.</p>
+
+      <h2>8. Grievances</h2>
+      <p>For any complaint about our services or your personal data, please see our <a href="grievance-redressal.html">Grievance Redressal</a> page.</p>
+
+      <h2>9. Contact</h2>
       <p>Questions about these terms? Reach us at <a data-config-href="mailto"><span data-config="email"></span></a> or <a data-config-href="tel"><span data-config="phoneDisplay"></span></a>.</p>
+    </div>
+  </section>
+
+`,
+};
+
+/* ---------- Cookie Policy ---------- */
+pages["cookie-policy.html"] = {
+  title: "Cookie Policy | PESTNEST",
+  desc: "How PESTNEST uses cookies and similar technologies on this website, and how you can manage your preferences.",
+  body:
+    legalHero("Cookie Policy", "Cookie Policy") +
+    `  <section>
+    <div class="container legal-content">
+      <p>This Cookie Policy explains how <span data-config="brandName"></span> uses cookies and similar technologies on this website. It should be read together with our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+      <h2>1. What Are Cookies?</h2>
+      <p>Cookies are small text files stored on your device when you visit a website. Similar technologies include local storage. They help a website function, remember your preferences and understand how it is used.</p>
+
+      <h2>2. Cookies We Use</h2>
+      <ul>
+        <li><strong>Strictly necessary / functional</strong> — required for the site to work and to remember your cookie-consent choice (stored in your browser's local storage). These are always active as the site cannot function properly without them.</li>
+        <li><strong>Analytics (optional)</strong> — if enabled by our hosting provider, these collect anonymous, aggregated data about how visitors use the site, so we can improve it. They do not identify you personally.</li>
+      </ul>
+      <p>We do <strong>not</strong> use advertising or cross-site tracking cookies, and we do not sell any data collected via cookies.</p>
+
+      <h2>3. Your Consent</h2>
+      <p>When you first visit, we show a consent notice. By choosing "Accept" you consent to non-essential cookies; choosing "Decline" limits use to strictly necessary cookies. You can change your choice at any time by clearing your browser storage for this site.</p>
+
+      <h2>4. Managing Cookies</h2>
+      <p>You can control and delete cookies through your browser settings — most browsers let you block or remove cookies and clear site storage. Please note that disabling strictly necessary cookies may affect how the site works.</p>
+
+      <h2>5. Changes</h2>
+      <p>We may update this Cookie Policy from time to time. Changes will be posted on this page with a revised date.</p>
+
+      <h2>6. Contact</h2>
+      <p>Questions about our use of cookies? Contact us at <a data-config-href="mailto"><span data-config="email"></span></a>.</p>
+    </div>
+  </section>
+
+`,
+};
+
+/* ---------- Refund & Cancellation Policy ---------- */
+pages["refund-policy.html"] = {
+  title: "Refund & Cancellation Policy | PESTNEST",
+  desc: "Cancellation, rescheduling and refund terms for PESTNEST pest control bookings in Delhi NCR.",
+  body:
+    legalHero("Refund &amp; Cancellation", "Refund &amp; Cancellation Policy") +
+    `  <section>
+    <div class="container legal-content">
+      <p>This policy explains how cancellations, rescheduling and refunds work for services booked with <span data-config="brandName"></span>.</p>
+
+      <h2>1. Bookings &amp; Payment</h2>
+      <p>Bookings are confirmed by phone, WhatsApp or our website enquiry form. Payment is normally collected <strong>after the service is completed</strong>, directly to our team — this website does not process online payments. Where an advance is agreed for a large or scheduled job, it is adjusted against the final bill.</p>
+
+      <h2>2. Cancellation &amp; Rescheduling</h2>
+      <ul>
+        <li>You may cancel or reschedule free of charge by giving us at least <strong>4 hours' notice</strong> before the appointment.</li>
+        <li>Cancellations at very short notice, or if our technician is unable to carry out the service after arriving due to lack of access or preparation, may attract a nominal visit charge, which we will inform you of in advance.</li>
+        <li>We may reschedule a visit due to weather, technician availability or unforeseen circumstances; we will offer you the earliest alternative slot.</li>
+      </ul>
+
+      <h2>3. Refunds</h2>
+      <ul>
+        <li>If you have made an <strong>advance payment</strong> and cancel before the service is carried out, the advance is refunded in full (any bank/gateway charges, if applicable, excluded).</li>
+        <li>Once a service has been <strong>completed</strong>, our commitment is delivered through the <strong>service warranty</strong>: if the treated pest returns within the warranty period, we re-treat free of charge rather than issue a refund.</li>
+        <li>If a service was paid for but <strong>not rendered</strong> by us, you are entitled to a full refund.</li>
+        <li>Approved refunds are processed to the original payment method within <strong>7–10 business days</strong>.</li>
+      </ul>
+
+      <h2>4. How to Request</h2>
+      <p>To cancel, reschedule or request a refund, contact us on <a data-config-href="tel"><span data-config="phoneDisplay"></span></a>, via <a data-config-href="whatsapp">WhatsApp</a>, or by email at <a data-config-href="mailto"><span data-config="email"></span></a> with your booking details. Unresolved concerns can be raised through our <a href="grievance-redressal.html">Grievance Redressal</a> process.</p>
+    </div>
+  </section>
+
+`,
+};
+
+/* ---------- Disclaimer ---------- */
+pages["disclaimer.html"] = {
+  title: "Disclaimer | PESTNEST",
+  desc: "Website disclaimer for PESTNEST — information accuracy, pricing, results, external links and limitation of liability.",
+  body:
+    legalHero("Disclaimer", "Disclaimer") +
+    `  <section>
+    <div class="container legal-content">
+      <p>The information on this website is provided by <span data-config="brandName"></span> for general information purposes only. By using this website you accept the terms of this disclaimer, which should be read with our <a href="terms-conditions.html">Terms &amp; Conditions</a>.</p>
+
+      <h2>1. Information Accuracy</h2>
+      <p>We take reasonable care to keep information on this site accurate and up to date, but we make no representations or warranties of any kind, express or implied, about its completeness, accuracy or reliability. Any reliance you place on such information is strictly at your own risk.</p>
+
+      <h2>2. Pricing</h2>
+      <p>Prices shown are <strong>indicative</strong> and based on standard home sizes. The final quote is confirmed after inspection and before work begins. Prices may change without notice.</p>
+
+      <h2>3. Service Results &amp; Warranty</h2>
+      <p>Outcomes of pest control depend on factors including the level of infestation, property condition and adherence to aftercare guidance. Our commitments are limited to the specific <strong>service warranty</strong> stated on each service page. Nothing on this website is a guarantee beyond that warranty.</p>
+
+      <h2>4. Not Professional Advice</h2>
+      <p>Content on this site is not medical, health, legal or professional advice. For any health concern related to pests or chemicals, please consult a qualified professional.</p>
+
+      <h2>5. External Links</h2>
+      <p>This website may contain links to external sites (for example, WhatsApp). We have no control over the content or availability of those sites and are not responsible for them.</p>
+
+      <h2>6. Limitation of Liability</h2>
+      <p>To the extent permitted by law, <span data-config="brandName"></span> shall not be liable for any loss or damage arising from the use of, or inability to use, this website. Our liability for services is governed by our <a href="terms-conditions.html">Terms &amp; Conditions</a>.</p>
+    </div>
+  </section>
+
+`,
+};
+
+/* ---------- Grievance Redressal ---------- */
+pages["grievance-redressal.html"] = {
+  title: "Grievance Redressal | PESTNEST",
+  desc: "How to raise a complaint or data-protection grievance with PESTNEST — Grievance Officer contact, process and timelines.",
+  body:
+    legalHero("Grievance Redressal", "Grievance Redressal") +
+    `  <section>
+    <div class="container legal-content">
+      <p>We are committed to resolving your concerns fairly and promptly. This page explains how to raise a grievance about our services or the handling of your personal data, in line with the <strong>Digital Personal Data Protection Act, 2023</strong>, the <strong>Information Technology (Intermediary Guidelines) Rules, 2021</strong> and the <strong>Consumer Protection (E-Commerce) Rules, 2020</strong>.</p>
+
+      <h2>1. Grievance Officer</h2>
+      <p>You can contact our Grievance Officer for any complaint, including data-protection matters:</p>
+      <p><strong><span data-config="grievanceOfficer.name"></span></strong>, <span data-config="brandName"></span><br>
+        <span data-config="address"></span><br>
+        Email: <span data-config="grievanceOfficer.email"></span><br>
+        Phone: <span data-config="grievanceOfficer.phone"></span></p>
+
+      <h2>2. How to File a Grievance</h2>
+      <p>Please write to the Grievance Officer by email or phone with:</p>
+      <ul>
+        <li>Your name and contact details;</li>
+        <li>Your booking reference or service address (if applicable);</li>
+        <li>A clear description of the issue; and</li>
+        <li>Any supporting details or photographs.</li>
+      </ul>
+
+      <h2>3. Our Timelines</h2>
+      <ul>
+        <li>We will <strong>acknowledge</strong> your grievance within <strong>48 hours</strong> of receipt.</li>
+        <li>We will endeavour to <strong>resolve</strong> it within <strong>15 days</strong>, or within the timeline prescribed under applicable law, whichever is earlier.</li>
+      </ul>
+
+      <h2>4. Escalation</h2>
+      <p>If you are not satisfied with the resolution of a <strong>data-protection</strong> grievance, you may escalate the matter to the <strong>Data Protection Board of India</strong> under the DPDP Act, 2023. For <strong>consumer</strong> grievances, you may approach the appropriate Consumer Disputes Redressal Commission or the National Consumer Helpline (1915).</p>
+
+      <h2>5. Contact</h2>
+` + legalContact + `
     </div>
   </section>
 

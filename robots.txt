@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Replace with your live domain before uploading
-Sitemap: https://www.yourdomain.com/sitemap.xml
+Sitemap: https://pestnest.co.in/sitemap.xml
