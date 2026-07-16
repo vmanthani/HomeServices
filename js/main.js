@@ -203,7 +203,16 @@
     telephone: C.phone,
     email: C.email,
     priceRange: "₹₹",
-    address: { "@type": "PostalAddress", addressLocality: C.city, addressCountry: "IN" },
+    address: C.postalAddress
+      ? {
+          "@type": "PostalAddress",
+          streetAddress: C.postalAddress.street,
+          addressLocality: C.postalAddress.locality,
+          addressRegion: C.postalAddress.region,
+          postalCode: C.postalAddress.postalCode,
+          addressCountry: C.postalAddress.country || "IN",
+        }
+      : { "@type": "PostalAddress", addressLocality: C.city, addressCountry: "IN" },
     areaServed: C.areas.map((a) => ({ "@type": "City", name: a })),
     openingHours: C.hoursSchema || undefined,
     aggregateRating: C.rating

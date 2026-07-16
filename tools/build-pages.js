@@ -462,7 +462,7 @@ pages["contact.html"] = {
           </div>
           <div class="card contact-card reveal">
             <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><h3>Service Area</h3><p><span data-config="address"></span><br><span style="color:var(--muted);font-size:.85rem">Doorstep service across the region</span></p></div>
+            <div><h3>Our Office</h3><p><span data-config="address"></span><br><span style="color:var(--muted);font-size:.85rem">By appointment · Doorstep service across Delhi NCR</span></p></div>
           </div>
         </div>
         <div class="card reveal">

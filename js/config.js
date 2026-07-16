@@ -54,7 +54,15 @@ const SITE_CONFIG = {
   whatsappMessage: "Hi! I'd like to book a pest control service.",
   email: "info@pestnest.in",         // placeholder — swap for the real inbox before launch
   hours: "Mon–Sun · 8:00 AM – 9:00 PM",
-  address: "Delhi NCR, India",
+  address: "DLF Phase 3, U-Block, EWS Apartment E-209, Gurugram, Haryana 122010",
+  /* Structured address — powers the LocalBusiness map/schema (local SEO). */
+  postalAddress: {
+    street: "DLF Phase 3, U-Block, EWS Apartment E-209",
+    locality: "Gurugram",
+    region: "Haryana",
+    postalCode: "122010",
+    country: "IN"
+  },
 
   /* ---------- Legal / compliance (India: DPDP Act 2023, IT Act 2000) ----------
      These fill the legal pages. Replace the placeholders with the client's
