@@ -132,50 +132,53 @@ const SITE_CONFIG = {
       name: "GPC Treatment",
       color: "#10b981",
       warranty: "3-Month Warranty",
-      priceFrom: 1495,
-      oldPriceFrom: 1995,      // "was" price -> shows a % OFF flash on the hero badge
+      priceFrom: 1499,
+      oldPriceFrom: 1999,      // "was" price -> shows a % OFF flash on the hero badge
       tiers: [
-        { label: "1 BHK", price: 1495, oldPrice: 1995 },
-        { label: "2 BHK", price: 1595, oldPrice: 2095 },
-        { label: "3 BHK", price: 1795, oldPrice: 2395 },
-        { label: "4 BHK / Villa", price: 1995, oldPrice: 2695 }
+        { label: "1 BHK", price: 1499, oldPrice: 1999 },
+        { label: "2 BHK", price: 1599, oldPrice: 2099 },
+        { label: "3 BHK", price: 1799, oldPrice: 2399 },
+        { label: "4 BHK / Villa", price: 1999, oldPrice: 2699 }
       ]
     },
     termite: {
       name: "Termite Treatment",
       color: "#d97706",
       warranty: "1-Year Warranty",
-      priceFrom: 2495,
+      priceFrom: 2499,
+      oldPriceFrom: 3499,
       tiers: [
-        { label: "1 BHK", price: 2495 },
-        { label: "2 BHK", price: 3495 },
-        { label: "3 BHK", price: 4995 },
-        { label: "4 BHK", price: 5995 },
-        { label: "Villa / Bungalow", price: 7495 }
+        { label: "1 BHK", price: 2499, oldPrice: 3499 },
+        { label: "2 BHK", price: 3499, oldPrice: 4499 },
+        { label: "3 BHK", price: 4999, oldPrice: 6499 },
+        { label: "4 BHK", price: 5999, oldPrice: 7499 },
+        { label: "Villa / Bungalow", price: 7499, oldPrice: 9499 }
       ]
     },
     bedbug: {
       name: "Bed Bug Treatment",
       color: "#e11d48",
       warranty: "3-Month Warranty",
-      priceFrom: 2495,
+      priceFrom: 2499,
+      oldPriceFrom: 3499,
       tiers: [
-        { label: "1 BHK", price: 2495 },
-        { label: "2 BHK", price: 2995 },
-        { label: "3 BHK", price: 3995 },
-        { label: "4 BHK / Villa", price: 4995 }
+        { label: "1 BHK", price: 2499, oldPrice: 3499 },
+        { label: "2 BHK", price: 2999, oldPrice: 3999 },
+        { label: "3 BHK", price: 3999, oldPrice: 5499 },
+        { label: "4 BHK / Villa", price: 4999, oldPrice: 6999 }
       ]
     },
     rodent: {
       name: "Rodent Treatment",
       color: "#6366f1",
       warranty: "3-Month Warranty",
-      priceFrom: 1295,
+      priceFrom: 1299,
+      oldPriceFrom: 1699,
       tiers: [
-        { label: "1 BHK", price: 1295 },
-        { label: "2 BHK", price: 1595 },
-        { label: "3 BHK", price: 1895 },
-        { label: "4 BHK / Office", price: 2295 }
+        { label: "1 BHK", price: 1299, oldPrice: 1699 },
+        { label: "2 BHK", price: 1599, oldPrice: 1999 },
+        { label: "3 BHK", price: 1899, oldPrice: 2299 },
+        { label: "4 BHK / Office", price: 2499, oldPrice: 2699 }
       ]
     }
   }
